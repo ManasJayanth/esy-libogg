@@ -11,6 +11,7 @@
       }
     },
     "build": [
+      "find ./ -exec touch -t 200905010101 {} +",
       "chmod 755 ./configure",
       "./configure --prefix=#{self.install} #{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",
       "make",
